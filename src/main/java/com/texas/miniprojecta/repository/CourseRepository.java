@@ -1,4 +1,3 @@
-//CourseRepository
 package com.texas.miniprojecta.repository;
 
 import com.texas.miniprojecta.entity.Course;

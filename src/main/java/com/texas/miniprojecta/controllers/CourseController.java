@@ -1,4 +1,3 @@
-//CourseController
 package com.texas.miniprojecta.controllers;
 
 import com.texas.miniprojecta.entity.Course;

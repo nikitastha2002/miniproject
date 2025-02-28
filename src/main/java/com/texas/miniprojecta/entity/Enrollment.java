@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,8 +18,14 @@ public class Enrollment {
     @SequenceGenerator(name = "enrollment_sequence", sequenceName = "enrollment_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "enrollment_sequence")
     private Long id;
-    private Long studentId;
-    private Long courseId;
     private LocalDate enrollmentDate;
     private String grade;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "id ")
+    private Course course;
 }

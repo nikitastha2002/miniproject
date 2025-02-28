@@ -40,4 +40,3 @@ public class DepartmentServiceImpl implements DepartmentService {
         return null;
     }
 }
-

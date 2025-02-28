@@ -1,4 +1,3 @@
-//CourseServiceImp
 package com.texas.miniprojecta.services;
 
 import com.texas.miniprojecta.entity.Course;

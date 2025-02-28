@@ -22,7 +22,7 @@ public class StudentServiceImpl implements StudentService {
     }
     @Override
     public List<Student> getAll(){
-            return studentRepository.findAll();
+        return studentRepository.findAll();
     }
 
     @Override
@@ -32,11 +32,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void deleteStudent(long id) {
-         studentRepository.deleteById(id);
+        studentRepository.deleteById(id);
     }
 
     @Override
-    public Student updateStudents(Student student) {
+    public Student updateStudent(Student student) {
         return studentRepository.saveAndFlush(student);
     }
 }

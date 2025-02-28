@@ -1,8 +1,9 @@
 package com.texas.miniprojecta.repository;
-import com.texas.miniprojecta.entity.Enrollment;
+
+import com.texas.miniprojecta.entity.Instructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
+public interface InstructorRepository extends JpaRepository<Instructor, Long> {
 }

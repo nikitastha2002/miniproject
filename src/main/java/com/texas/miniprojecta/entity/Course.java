@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -22,6 +24,13 @@ public class Course {
     private Integer credit;
 
     @ManyToOne
+    private Department departmentId;
 
-    private Department department;
+    @OneToMany(cascade = CascadeType.ALL,  orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "enrollment_id")
+    private List<Enrollment> enrollments;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "classes_id")
+    private List<Classes> classes;
 }

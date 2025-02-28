@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -21,4 +24,11 @@ public class Student {
     private String address;
     private String phoneNumber;
     private String grade;
+    private LocalDate enrollmentDate;
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "enrollment_id")
+    private List<Enrollment> enrollments;
+
 }
